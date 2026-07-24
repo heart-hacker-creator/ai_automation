@@ -3,7 +3,12 @@ import sys
 import webbrowser
 import threading
 from flask import Flask, render_template, request, jsonify, send_from_directory
-from flask_cors import CORS
+try:
+    from flask_cors import CORS
+    HAS_CORS = True
+except ImportError:
+    HAS_CORS = False
+
 from dotenv import load_dotenv
 
 # Load environment variables
@@ -17,7 +22,8 @@ import music
 import chat_bot_code
 
 app = Flask(__name__, static_folder='.', template_folder='.')
-CORS(app)
+if HAS_CORS:
+    CORS(app)
 
 @app.route('/')
 def index():
