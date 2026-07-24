@@ -8,3 +8,5 @@ playsound
 pyautogui
 pyperclip
 python-dotenv
+flask
+flask-cors

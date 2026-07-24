@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS - Sci-Fi AI Interface</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="grid-lines"></div>
+
+    <div class="hud-container">
+        <!-- TOP HEADER HUD -->
+        <header class="hud-header">
+            <div class="header-left">
+                <div class="logo">
+                    <i class="fa-solid fa-microchip glow-icon"></i>
+                    <span>J.A.R.V.I.S</span>
+                </div>
+                <div class="system-badge">
+                    <span class="status-dot"></span> SYSTEM ONLINE
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <div class="ai-model-badge">
+                    <i class="fa-solid fa-brain"></i> GEMINI 3.6 FLASH
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="time-display" id="clockDisplay">00:00:00</div>
+                <div class="status-pill" id="voiceStatusPill">
+                    <i class="fa-solid fa-microphone"></i> READY
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="hud-main">
+            <!-- LEFT PANEL: ARC REACTOR & SPEECH CONTROL -->
+            <section class="reactor-section">
+                <div class="reactor-wrapper">
+                    <!-- Spinning Rings -->
+                    <div class="outer-ring ring-1"></div>
+                    <div class="outer-ring ring-2"></div>
+                    <div class="outer-ring ring-3"></div>
+                    
+                    <!-- Core Arc Reactor Button -->
+                    <button class="arc-reactor" id="micBtn" title="Click to Speak / Listen">
+                        <div class="core-glow"></div>
+                        <i class="fa-solid fa-microphone mic-icon"></i>
+                    </button>
+                </div>
+
+                <div class="reactor-status">
+                    <h2 id="reactorStateText">TAP TO SPEAK TO JARVIS</h2>
+                    <p id="subStateText">Listening to wake word or voice commands</p>
+                </div>
+
+                <!-- Animated Sound Wave Visualizer -->
+                <div class="sound-wave-container" id="soundWave">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </section>
+
+            <!-- RIGHT PANEL: CONVERSATION CONSOLE -->
+            <section class="console-section">
+                <div class="console-header">
+                    <h3><i class="fa-solid fa-terminal"></i> COMMAND & CONVERSATION LOG</h3>
+                    <button class="clear-btn" id="clearChatBtn" title="Clear Console">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+
+                <!-- Chat Messages Feed -->
+                <div class="chat-box" id="chatBox">
+                    <div class="message system-msg">
+                        <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                        <div class="msg-content">
+                            <span class="sender">JARVIS AI SYSTEM</span>
+                            <p>Initializing systems... All modules online. Welcome back, Boss. How may I assist you today?</p>
+                            <span class="time-stamp">Just now</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Action Pills -->
+                <div class="quick-actions">
+                    <button class="action-chip" data-command="weather Kolkata"><i class="fa-solid fa-cloud-sun"></i> Weather</button>
+                    <button class="action-chip" data-command="news"><i class="fa-solid fa-newspaper"></i> Top News</button>
+                    <button class="action-chip" data-command="open youtube"><i class="fa-brands fa-youtube"></i> YouTube</button>
+                    <button class="action-chip" data-command="play skyfall"><i class="fa-solid fa-music"></i> Play Skyfall</button>
+                    <button class="action-chip" data-command="run whatsapp bot"><i class="fa-brands fa-whatsapp"></i> WhatsApp Bot</button>
+                </div>
+
+                <!-- Command Input Box -->
+                <div class="input-container">
+                    <input type="text" id="commandInput" placeholder="Type a command or ask Jarvis anything..." autocomplete="off">
+                    <button id="sendBtn" class="send-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="hud-footer">
+            <span>JARVIS MULTI-AGENT CONTROL SYSTEM &copy; 2026</span>
+            <span>POWERED BY GOOGLE GEMINI AI</span>
+        </footer>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="script.js"></script>
+</body>
+</html>
