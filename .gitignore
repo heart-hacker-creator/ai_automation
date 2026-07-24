@@ -1,0 +1,29 @@
+# Environment variables & secrets
+.env
+api.txt
+
+# Audio runtime outputs
+temp_voice.mp3
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store

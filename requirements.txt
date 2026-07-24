@@ -1,0 +1,10 @@
+google-genai
+openai
+requests
+SpeechRecognition
+pyttsx3
+gTTS
+playsound
+pyautogui
+pyperclip
+python-dotenv
